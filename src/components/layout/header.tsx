@@ -56,7 +56,7 @@ let UTILITIES = ['Car Batteries | Car Remote Cells', 'Car Fridge', 'Car Hydrauli
       {
         LedAndLightening.map((items)=>{
           return(
-            <li className="list-disc">{items}</li>
+            <li key={items} className="list-disc">{items}</li>
             )
           })
         }
@@ -78,7 +78,7 @@ let UTILITIES = ['Car Batteries | Car Remote Cells', 'Car Fridge', 'Car Hydrauli
       {
         ExteriorParts.map((items)=>{
           return(
-            <li className="list-disc">{items}</li>
+            <li key={items} className="list-disc">{items}</li>
           )
         })
       }
