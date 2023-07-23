@@ -51,7 +51,7 @@ const Footer = () => {
                 <a className="block pb-2 text-sm font-semibold text-blueGray-600 hover:text-blueGray-800" href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile">MIT License</a>
               </li>
               <li>
-                <a className="block pb-2 text-sm font-semibold text-blueGray-600 hover:text-blueGray-800" href="https://creative-tim.com/terms?ref=njs-profile">Terms &amp; Conditions</a>
+                <a className="block pb-2 text-sm font-semibold text-blueGray-600 hover:text-blueGray-800" href="https://creative-tim.com/terms?ref=njs-profile">Terms Conditions</a>
               </li>
               <li>
                 <a className="block pb-2 text-sm font-semibold text-blueGray-600 hover:text-blueGray-800" href="https://creative-tim.com/privacy?ref=njs-profile">Privacy Policy</a>
