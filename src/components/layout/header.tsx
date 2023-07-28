@@ -3,11 +3,11 @@
 import Image from "next/image";
 import logo from "/public/logo.png"
 import Link from "next/link";
-import {BiSearch,BiCart} from "react-icons/bi"
+import {BiCart} from "react-icons/bi"
+// import {BiSearch} from "react-icons/bi"
 // import { useUser, UserButton } from "@clerk/nextjs";
 import { Button } from "../ui/button";
 import {LuAlignRight} from "react-icons/lu"
-import {IoCloseOutline} from "react-icons/io5"
 import { useState } from "react";
 import {
   Sheet,
@@ -23,7 +23,6 @@ import {
 
 
 const Navbar = () => {
-  const [open,setOpen] =useState(false)
   const [LAL,setLAL] =useState(false)
   const [EP,setEP] =useState(false)
   const [IP,setIP] =useState(false)
@@ -76,8 +75,9 @@ let UTILITIES = ['CarBatteries|CarRemoteCells', 'CarFridge', 'CarHydraulicLiftin
       {
         LedAndLightening.map((items)=>{
           return(
-            <Link href={`/Category/${items}`}>
-            <li key={items} className="list-disc">{items}</li>
+            
+            <Link key={items} href={`/Category/${items}`}>
+            <li className="list-disc">{items}</li>
             </Link>
             )
           })
@@ -112,8 +112,9 @@ let UTILITIES = ['CarBatteries|CarRemoteCells', 'CarFridge', 'CarHydraulicLiftin
       {
         ExteriorParts.map((items)=>{
           return(
-            <Link href={`/Category/${items}`}>
-            <li key={items} className="list-disc">{items}</li>
+            
+            <Link key={items} href={`/Category/${items}`}>
+            <li className="list-disc">{items}</li>
             </Link>
             )
           })
@@ -148,8 +149,9 @@ let UTILITIES = ['CarBatteries|CarRemoteCells', 'CarFridge', 'CarHydraulicLiftin
       {
         INTERIORPARTS.map((items)=>{
           return(
-            <Link href={`/Category/${items}`}>
-            <li key={items} className="list-disc">{items}</li>
+            
+            <Link key={items} href={`/Category/${items}`}>
+            <li className="list-disc">{items}</li>
             </Link>
             )
           })
@@ -184,8 +186,9 @@ let UTILITIES = ['CarBatteries|CarRemoteCells', 'CarFridge', 'CarHydraulicLiftin
       {
         CARCARE.map((items)=>{
           return(
-            <Link href={`/Category/${items}`}>
-            <li key={items} className="list-disc">{items}</li>
+           
+            <Link key={items} href={`/Category/${items}`}>
+            <li className="list-disc">{items}</li>
             </Link>
             )
           })
@@ -220,8 +223,9 @@ let UTILITIES = ['CarBatteries|CarRemoteCells', 'CarFridge', 'CarHydraulicLiftin
       {
         MOBILE.map((items)=>{
           return(
-            <Link href={`/Category/${items}`}>
-            <li key={items} className="list-disc">{items}</li>
+            
+            <Link key={items} href={`/Category/${items}`}>
+            <li className="list-disc">{items}</li>
             </Link>
             )
           })
@@ -256,8 +260,9 @@ let UTILITIES = ['CarBatteries|CarRemoteCells', 'CarFridge', 'CarHydraulicLiftin
       {
         UTILITIES.map((items)=>{
           return(
-            <Link href={`/Category/${items}`}>
-            <li key={items} className="list-disc">{items}</li>
+            
+            <Link key={items} href={`/Category/${items}`}>
+            <li className="list-disc">{items}</li>
             </Link>
             )
           })
@@ -292,8 +297,9 @@ let UTILITIES = ['CarBatteries|CarRemoteCells', 'CarFridge', 'CarHydraulicLiftin
       {
         others.map((items)=>{
           return(
-            <Link href={`/Category/${items}`}>
-            <li key={items} className="list-disc">{items}</li>
+            
+            <Link key={items} href={`/Category/${items}`}>
+            <li className="list-disc">{items}</li>
             </Link>
             )
           })
@@ -313,9 +319,9 @@ let UTILITIES = ['CarBatteries|CarRemoteCells', 'CarFridge', 'CarHydraulicLiftin
       <SheetContent className="bg-stone-700">
         <SheetHeader >
           <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
+          {/* <SheetDescription>
             Make changes to your profile here. Click save when you're done.
-          </SheetDescription>
+          </SheetDescription> */}
         </SheetHeader>
         <div className="flex justify-center ">
 <div className="flex items-center pl-4 pr-4 rounded-full">
