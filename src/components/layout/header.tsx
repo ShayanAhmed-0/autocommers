@@ -9,16 +9,7 @@ import { Button } from "../ui/button";
 import {LuAlignRight} from "react-icons/lu"
 import {IoCloseOutline} from "react-icons/io5"
 import { useState } from "react";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu"
+
 
 
 
@@ -26,6 +17,12 @@ const Navbar = () => {
   const [open,setOpen] =useState(false)
   const [LAL,setLAL] =useState(false)
   const [EP,setEP] =useState(false)
+  const [IP,setIP] =useState(false)
+  const [CC,setCC] =useState(false)
+  const [M,setM] =useState(false)
+  const [U,setU] =useState(false)
+  const [Other,setOther] =useState(false)
+
 
   // let components:string[]=["a","b","c"]
   let others:string[] = ['Jeep SUV and Bike', 'Bike Accessories', 'Jeep & Pickup Accessories', 'Jeep Lights', 'Storage Boxes', 'Keychains & Pouch', 'Keychains', 'Leather Key Covers', 'PVC Silicone Key Covers', 'Replacement Key Shell Cover', 'TPU Plastic Key Covers', 'Perfume & Fragrances', 'Aerosol Fresheners', 'Fancy Dashboard Perfumes', 'Gel & Wood Perfumes', 'Perfume Cards & Hangings', 'Perfume Diffusers and Ionisers', 'Vent & AC Perfumes', 'Security Gadgets', 'Anti-Theft Locks', 'Car Alarm', 'Parking Sensors', 'Spy Camera', 'Wheel', 'Alloy Rims', 'Brake Calliper Covers', 'Tire Pressure Monitoring System', 'Tyre Gauges', 'Tyre Valve Air Caps', 'Wheel Accessories', 'Wheel Centre Caps', 'Wheel Covers', 'Wheel Lugnuts', 'Wheel Tyres / Tires', 'Wheels Snow Chains', 'Bundle Offers & Flash Sale', 'Bundle Offers', 'Services ', 'Used Car Accessories']
@@ -38,23 +35,105 @@ let MOBILE = ['Charging Cables', 'Mobile Chargers | Charging Sockets', 'Mobile H
 let UTILITIES = ['Car Batteries | Car Remote Cells', 'Car Fridge', 'Car Hydraulic Lifting Jacks', 'Car Insulators | Liners', 'Double Sided  Tape & Adhesives', 'Horns & Sirens', 'Portable Fans & Heaters', 'Spare Wheel Covers', 'Tire Air Compressor Inflators', 'Top Covers', 'Vacuum Cleaner', 'Wiper Blades']
 //   const { isSignedIn } = useUser();
   return (
-    <div className="flex items-center justify-between p-4 mx-8 my-6 rounded-full navc">
+    <div className="flex items-center justify-between p-4 mx-8 my-6 rounded-full shadow-lg shadow-black navc">
       <Link href={"/"}>
       <Image src={logo} alt="navbarImg" height={50} className="rounded-full" />
       </Link>
       <div className="hidden text-lg font-semibold lg:flex gap-x-10 ">
 
 <div>
-  <button onClick={()=>LAL?setLAL(false):setLAL(true)}>
+  <button onClick={()=>{
+    if(LAL){
+      setLAL(false)
+    }else{
+      setLAL(true)
+      setEP(false)
+      setIP(false)
+      setCC(false)
+      setM(false)
+      setU(false)
+      setOther(false)
+    }
+  }
+    // ()=>LAL?setLAL(false):setLAL(true)
+    }>
   LedAndLightening
   </button>
 {
-  !EP && LAL && 
-  <div className="flex justify-center ">
-  <div className="absolute z-10 mt-10">
-    <ul className="grid grid-cols-4 pl-6 mt-2 bg-black/50 gap-x-10 gap-y-8">
+  !EP && !IP && !CC && !M && !U && LAL && !Other && 
+  <div className="absolute left-0 z-10 justify-center w-full mt-10 ">
+  <div className="flex justify-center">
+  <ul className="grid grid-cols-4 p-4 pl-10 mt-2 bg-black/70 gap-x-10 gap-y-8">
       {
         LedAndLightening.map((items)=>{
+          return(
+            <li key={items} className="list-disc">{items}</li>
+            )
+          })
+        }
+    </ul>
+  </div>
+  </div>
+}
+</div>
+
+<div>
+  <button onClick={()=>{
+    if(EP){
+      setEP(false)
+    }else{
+      setLAL(false)
+      setEP(true)
+      setIP(false)
+      setCC(false)
+      setM(false)
+      setU(false)
+      setOther(false)
+    }
+  }}>
+  ExteriorParts
+  </button>
+{
+  EP && !IP && !CC && !M && !U && !LAL && !Other && 
+  <div className="absolute left-0 z-10 justify-center w-full mt-10 ">
+    <div className="flex justify-center">
+    <ul className="grid grid-cols-4 p-4 pl-10 mt-2 bg-black/70 gap-x-10 gap-y-8">
+      {
+        ExteriorParts.map((items)=>{
+          return(
+            <li key={items} className="list-disc">{items}</li>
+            )
+          })
+        }
+    </ul>
+        </div>
+      </div>
+}
+</div>
+
+<div>
+  <button onClick={()=>{
+    if(IP){
+      setIP(false)
+    }else{
+      setLAL(false)
+      setEP(false)
+      setIP(true)
+      setCC(false)
+      setM(false)
+      setU(false)
+      setOther(false)
+    }
+  }}>
+  INTERIORPARTS
+  </button>
+{
+  !EP && IP && !CC && !M && !U && !LAL && !Other &&
+  <div className="absolute left-0 z-10 justify-center w-full mt-10 ">
+    <div className="flex justify-center">
+    <ul className="grid grid-cols-4 p-4 pl-10 mt-2 bg-black/70 gap-x-10 gap-y-8">
+      {
+        INTERIORPARTS.map((items)=>{
           return(
             <li key={items} className="list-disc">{items}</li>
             )
@@ -67,181 +146,142 @@ let UTILITIES = ['Car Batteries | Car Remote Cells', 'Car Fridge', 'Car Hydrauli
 </div>
 
 <div>
-  <button onClick={()=>EP?setEP(false):setEP(true)}>
-  ExteriorParts
+  <button onClick={()=>{
+    if(CC){
+      setCC(false)
+    }else{
+      setLAL(false)
+      setEP(false)
+      setIP(false)
+      setCC(true)
+      setM(false)
+      setU(false)
+      setOther(false)
+    }
+  }}>
+  CARCARE
   </button>
 {
-  !LAL && EP && 
-  <div className="flex justify-center">
-  <div className="absolute z-10 mt-10 bg-black/50">
-    <ul className="grid grid-cols-4 pl-6 mt-2 gap-x-10 gap-y-8">
+  !EP && !IP && CC && !M && !U && !LAL && !Other &&
+  <div className="absolute left-0 z-10 justify-center w-full mt-10 ">
+    <div className="flex justify-center">
+    <ul className="grid grid-cols-4 p-4 pl-10 mt-2 bg-black/70 gap-x-10 gap-y-8">
       {
-        ExteriorParts.map((items)=>{
+        CARCARE.map((items)=>{
           return(
             <li key={items} className="list-disc">{items}</li>
-          )
-        })
-      }
+            )
+          })
+        }
     </ul>
+        </div>
   </div>
-      </div>
 }
 </div>
-      {/* <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>LedAndLightening</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[150vh] gap-y-4 grid-cols-4 pl-6 bg-black/50">
-              {LedAndLightening.map((component) => (
-                <li className="list-disc"
-                >
-                  {component}
-                </li>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
 
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>ExteriorParts</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {ExteriorParts.map((component) => (
-                <li
-                >
-                  {component}
-                </li>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+<div>
+  <button onClick={()=>{
+    if(M){
+      setM(false)
+    }else{
+      setLAL(false)
+      setEP(false)
+      setIP(false)
+      setCC(false)
+      setM(true)
+      setU(false)
+      setOther(false)
+    }
+  }}>
+  MOBILE
+  </button>
+{
+  !EP && !IP && !CC && M && !U && !LAL && !Other &&
+  <div className="absolute left-0 z-10 justify-center w-full mt-10 ">
+    <div className="flex justify-center">
+    <ul className="grid grid-cols-4 p-4 pl-10 mt-2 bg-black/70 gap-x-10 gap-y-8">
+      {
+        MOBILE.map((items)=>{
+          return(
+            <li key={items} className="list-disc">{items}</li>
+            )
+          })
+        }
+    </ul>
+        </div>
+  </div>
+}
+</div>
 
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>INTERIORPARTS</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {INTERIORPARTS.map((component) => (
-                <li
-                >
-                  {component}
-                </li>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+<div>
+  <button onClick={()=>{
+    if(U){
+      setU(false)
+    }else{
+      setLAL(false)
+      setEP(false)
+      setIP(false)
+      setCC(false)
+      setM(false)
+      setU(true)
+      setOther(false)
+    }
+  }}>
+  UTILITIES
+  </button>
+{
+!EP && !IP && !CC && !M && U && !LAL && !Other && 
+<div className="absolute left-0 z-10 justify-center w-full mt-10 ">
+<div className="flex justify-center">
+<ul className="grid grid-cols-4 p-4 pl-10 mt-2 bg-black/70 gap-x-10 gap-y-8">
+      {
+        UTILITIES.map((items)=>{
+          return(
+            <li key={items} className="list-disc">{items}</li>
+            )
+          })
+        }
+    </ul>
+        </div>
+  </div>
+}
+</div>
 
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>CARCARE</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {CARCARE.map((component) => (
-                <li
-                >
-                  {component}
-                </li>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
-
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>MOBILE</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {MOBILE.map((component) => (
-                <li
-                >
-                  {component}
-                </li>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
-
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>UTILITIES</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {UTILITIES.map((component) => (
-                <li
-                >
-                  {component}
-                </li>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
-
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>others</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-4 md:grid-rows-4 lg:w-[600px] bg-slate-950 ">
-              {others.map((component) => (
-                
-                <li>
-                  {component}
-                </li>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu> */}
-      </div>
-
-{/* search */}
-{/* <div className="items-center justify-center hidden border-2 lg:flex gap-x-2">
-<BiSearch/>
-<input type="text" placeholder="Search"/>
-</div> */}
-
-
-
-      {/* sign buttons */}
-      {/* <div className="hidden mr-10 lg:mr-0 sm:flex">
-        {isSignedIn ? (
-          <div className="flex items-center p-2 pl-4 pr-4 bg-gray-400 rounded-full gap-x-4">
-            <h1 className="flex items-center justify-center bg-gray-300 rounded-full w-9 h-9">
-            <BiCart size={18}/>
-            </h1>
-           <UserButton/>
-          </div>
-        ) : (
-          <div className="flex gap-x-5 ">
-            <Button  className="bg-blue-200 rounded-xl hover:bg-blue-300">
-              <Link href={"/SignUp"}>SignUp</Link>
-            </Button>
-            <Button className="bg-blue-200 rounded-xl hover:bg-blue-300">
-              <Link href={"/SignIn"}>SignIn</Link>
-            </Button>
-          </div>
-        )}
-      </div> */}
+<div>
+  <button onClick={()=>{
+    if(Other){
+      setOther(false)
+    }else{
+      setLAL(false)
+      setEP(false)
+      setIP(false)
+      setCC(false)
+      setM(false)
+      setU(false)
+      setOther(true)
+    }
+  }}>
+  others
+  </button>
+{
+  !EP && !IP && !CC && !M && !U && !LAL && Other &&
+  <div className="absolute left-0 z-10 justify-center w-full mt-10 ">
+    <div className="flex justify-center">
+    <ul className="grid grid-cols-4 p-4 pl-10 mt-2 bg-black/70 gap-x-10 gap-y-8">
+      {
+        others.map((items)=>{
+          return(
+            <li key={items} className="list-disc">{items}</li>
+            )
+          })
+        }
+    </ul>
+        </div>
+  </div>
+}
+</div>
+</div>
+     
 
 <button className="absolute lg:hidden sm:right-28 right-12" onClick={()=>open?setOpen(false):setOpen(true)
 }>
@@ -275,16 +315,25 @@ let UTILITIES = ['Car Batteries | Car Remote Cells', 'Car Fridge', 'Car Hydrauli
 </div>
      <ul className="text-lg font-semibold lg:hidden">
         <Link href={"/Category/Female"}>
-          <li className="flex justify-center">Female</li>
+          <li className="flex justify-center">LedAndLightening</li>
         </Link>
         <Link className="flex justify-center" href={"/Category/Male"}>
-          <li>Male</li>
+          <li>ExteriorParts</li>
         </Link>
         <Link className="flex justify-center"  href={"/Category/Kids"}>
-          <li>Kids</li>
+          <li>INTERIORPARTS</li>
         </Link>
         <Link className="flex justify-center"  href={"/Category/All-Products"}>
-          <li>All Products</li>
+          <li>CARCARE</li>
+        </Link>
+        <Link className="flex justify-center"  href={"/Category/All-Products"}>
+          <li>MOBILE</li>
+        </Link>
+        <Link className="flex justify-center"  href={"/Category/All-Products"}>
+          <li>UTILITIES</li>
+        </Link>
+        <Link className="flex justify-center"  href={"/Category/All-Products"}>
+          <li>others</li>
         </Link>
       </ul>
 

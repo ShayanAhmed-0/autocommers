@@ -9,7 +9,7 @@ function SampleNextArrow(props:any) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", background: "black" , borderRadius: "50%" }}
+      style={{ ...style, display: "block", background: "black" , borderRadius: "50%",marginRight:"40px" }}
       onClick={onClick}
     />
   );
@@ -19,7 +19,7 @@ function SamplePrevArrow(props:any) {
   return (
     <div
       className={className }
-      style={{ ...style, display: "block", background: "black" , borderRadius: "50%" }}
+      style={{ ...style, display: "block", background: "black" , borderRadius: "50%" ,}}
       onClick={onClick}
     />
   );
@@ -70,7 +70,7 @@ const CarouselSlider = () => {
                 <img
                   src={image}
                   alt={`Carousel Image ${index + 1}`}
-                  className="opacity-50 hover:opacity-100 focus:opacity-100"
+                  className=""
                 />
                 {/* className="object-cover w-full h-64" */}
               </div>

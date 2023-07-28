@@ -11,7 +11,7 @@ export default function Home() {
    <Header/>
 
   <Hero/>
-
+<div className='py-1 bg-white/40'></div>
    <div className="container mx-auto mt-10">
       {/* <h1 className="mb-8 text-4xl font-bold">Carousel Slider</h1> */}
       <CarouselSlider />
@@ -22,7 +22,7 @@ export default function Home() {
       <Cards/>
       <Cards/>
     </div> */}
-    <div className='mt-10 border-t-2'>
+    <div className='mt-16 '>
     <Footer/>
     </div>
    </div>
