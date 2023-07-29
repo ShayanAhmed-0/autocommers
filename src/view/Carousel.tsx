@@ -8,8 +8,8 @@ function SampleNextArrow(props:any) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={className}
-      style={{ ...style, display: "block", background: "black" , borderRadius: "50%",marginRight:"35px" }}
+      className={`${className} mr-0 sm:mr-8`}
+      style={{ ...style, display: "block", background: "black" , borderRadius: "50%"}}
       onClick={onClick}
     />
   );
@@ -64,10 +64,10 @@ const CarouselSlider = () => {
       };
     
       return (
-        <div className="relative justify-center">
+        <div className="relative justify-center border-none">
           <Slider {...settings}>
             {carouselImages.map((image, index) => (
-              <div key={index}>
+              <div key={index} className="border-none">
                 <img
                   src={image}
                   alt={`Carousel Image ${index + 1}`}
