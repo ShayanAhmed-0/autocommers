@@ -3,6 +3,7 @@ import Image from "next/image";
 import { client } from "@/lib/sanityClient";
 import { Image as IImage } from "sanity";
 import Hero from '@/view/Hero';
+import Link from 'next/link';
 
 interface IProduct {
   image: IImage;
@@ -41,8 +42,10 @@ const page = async ({ params }: { params: { type: string } }) => {
         <div className='relative justify-center'>
         <div className='grid grid-cols-1 gap-16 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
           {data.map((item, index) => (
-           <div key={item.id} style={{ marginTop: index % 2 === 0 ? '30px' : '150px' }}>
+            <div key={item.id} style={{ marginTop: index % 2 === 0 ? '30px' : '150px' }}>
+             <Link href={`/Product/${item.title}`}>
            <Cards item={item} />
+            </Link>
          </div>
           ))}
           </div>
