@@ -16,7 +16,7 @@ const Collapse = ({elements,heading}:{elements:string[],heading:string}) => {
   <ul className="pl-4 text-white">
     {
       elements.map((items:any)=>(
-        <Link href={`/Category/${items}`}>
+        <Link key={items} href={`/Category/${items}`}>
         <li className="list-disc" key={items}>
           {items}
         </li>

@@ -29,13 +29,13 @@ const Navbar = () => {
   const [M, setM] = useState(false);
   const [U, setU] = useState(false);
   const [Other, setOther] = useState(false);
-  const [color1,setColor1]=useState("text-white")
-  const [color2,setColor2]=useState("text-white")
-  const [color3,setColor3]=useState("text-white")
-  const [color4,setColor4]=useState("text-white")
-  const [color5,setColor5]=useState("text-white")
-  const [color6,setColor6]=useState("text-white")
-  const [color7,setColor7]=useState("text-white")
+  const [color1, setColor1] = useState("text-white");
+  const [color2, setColor2] = useState("text-white");
+  const [color3, setColor3] = useState("text-white");
+  const [color4, setColor4] = useState("text-white");
+  const [color5, setColor5] = useState("text-white");
+  const [color6, setColor6] = useState("text-white");
+  const [color7, setColor7] = useState("text-white");
 
   // let components:string[]=["a","b","c"]
   let others: string[] = [
@@ -154,7 +154,6 @@ const Navbar = () => {
     "Trunk-Mat-Foam-PE+EVA",
     "Universal-PVC&Rubber-Floor-Mats",
   ];
-
   let CARCARE = [
     "Additives&Lubricant-Treatments",
     "All-Purpose-Cleaners",
@@ -208,6 +207,11 @@ const Navbar = () => {
     <div
       onMouseLeave={() => {
         setTimeout(() => {
+          setColor1("text-white");
+          setColor2("text-white");
+          setColor3("text-white");
+          setColor4("text-white");
+          setColor5("text-white");
           setLAL(false);
           setEP(false);
           setIP(false);
@@ -215,7 +219,7 @@ const Navbar = () => {
           setM(false);
           setU(false);
           setOther(false);
-        }, 1500);
+        }, 5000);
       }}
       className="flex items-center justify-between p-4 mx-8 my-6 rounded-full shadow-lg shadow-black navc"
     >
@@ -230,18 +234,15 @@ const Navbar = () => {
       <div className="hidden text-lg font-semibold lg:flex gap-x-10 ">
         <div>
           <button
-          className={color1}
-          onMouseLeave={()=>{
-            
-setTimeout(() => {
-  setColor1("text-white")
-  
-}, 1500);
-}}
-
+            className={color1}
+            onMouseLeave={() => {
+              setTimeout(() => {
+                setColor1("text-white");
+              }, 1500);
+            }}
             onMouseEnter={
               () => {
-                setColor1("text-stone-400")
+                setColor1("text-stone-400");
                 if (LAL) {
                   setLAL(false);
                 } else {
@@ -266,7 +267,9 @@ setTimeout(() => {
                   {LedAndLightening.map((items) => {
                     return (
                       <Link key={items} href={`/Category/${items}`}>
-                        <li className="p-2 list-disc rounded-xl hover:text-stone-950 hover:bg-white">{items}</li>
+                        <li className="p-2 list-disc rounded-xl hover:text-stone-950 hover:bg-white">
+                          {items}
+                        </li>
                       </Link>
                     );
                   })}
@@ -278,16 +281,14 @@ setTimeout(() => {
 
         <div>
           <button
-                className={color2}
-                onMouseLeave={()=>{
-                  
-      setTimeout(() => {
-        setColor2("text-white")
-        
-      }, 1000);
-      }}
+            className={color2}
+            onMouseLeave={() => {
+              setTimeout(() => {
+                setColor2("text-white");
+              }, 1000);
+            }}
             onMouseEnter={() => {
-              setColor2("text-stone-400")
+              setColor2("text-stone-400");
               if (EP) {
                 setEP(false);
               } else {
@@ -322,16 +323,14 @@ setTimeout(() => {
 
         <div>
           <button
-                className={color3}
-                onMouseLeave={()=>{
-                  
-      setTimeout(() => {
-        setColor3("text-white")
-        
-      }, 1000);
-      }}
+            className={color3}
+            onMouseLeave={() => {
+              setTimeout(() => {
+                setColor3("text-white");
+              }, 1000);
+            }}
             onMouseEnter={() => {
-              setColor3("text-stone-400")
+              setColor3("text-stone-400");
               if (IP) {
                 setIP(false);
               } else {
@@ -366,16 +365,14 @@ setTimeout(() => {
 
         <div>
           <button
-                className={color4}
-                onMouseLeave={()=>{
-                  
-      setTimeout(() => {
-        setColor4("text-white")
-        
-      }, 1000);
-      }}
+            className={color4}
+            onMouseLeave={() => {
+              setTimeout(() => {
+                setColor4("text-white");
+              }, 1000);
+            }}
             onMouseEnter={() => {
-              setColor4("text-stone-400")
+              setColor4("text-stone-400");
               if (CC) {
                 setCC(false);
               } else {
@@ -410,16 +407,10 @@ setTimeout(() => {
 
         <div>
           <button
-                className={color5}
-                onMouseLeave={()=>{
-                  
-      setTimeout(() => {
-        setColor5("text-white")
-        
-      }, 1000);
-      }}
+            className={color5}
+            
             onMouseEnter={() => {
-              setColor5("text-stone-400")
+              setColor5("text-stone-400");
               if (M) {
                 setM(false);
               } else {
@@ -436,7 +427,19 @@ setTimeout(() => {
             MOBILE
           </button>
           {!EP && !IP && !CC && M && !U && !LAL && !Other && (
-            <div className="absolute left-0 z-10 justify-center w-full mt-10 ">
+            <div onMouseLeave={() => {
+              setTimeout(() => {
+                setColor5("text-white");
+                  setLAL(false);
+                  setEP(false);
+                  setIP(false);
+                  setCC(false);
+                  setM(false);
+                  setU(false);
+                  setOther(false);
+              }, 1000);
+            }} 
+            className="absolute left-0 z-10 justify-center w-full mt-10 ">
               <div className="flex justify-center">
                 <ul className="grid grid-cols-4 p-4 pl-10 mt-2 bg-black/70 gap-x-10 gap-y-8">
                   {MOBILE.map((items) => {
@@ -454,16 +457,14 @@ setTimeout(() => {
 
         <div>
           <button
-                className={color6}
-                onMouseLeave={()=>{
-                  
-      setTimeout(() => {
-        setColor6("text-white")
-        
-      }, 1000);
-      }}
+            className={color6}
+            onMouseLeave={() => {
+              setTimeout(() => {
+                setColor6("text-white");
+              }, 1000);
+            }}
             onMouseEnter={() => {
-              setColor6("text-stone-400")
+              setColor6("text-stone-400");
               if (U) {
                 setU(false);
               } else {
@@ -498,16 +499,14 @@ setTimeout(() => {
 
         <div>
           <button
-                className={color7}
-                onMouseLeave={()=>{
-                  
-      setTimeout(() => {
-        setColor7("text-white")
-        
-      }, 1000);
-      }}
+            className={color7}
+            onMouseLeave={() => {
+              setTimeout(() => {
+                setColor7("text-white");
+              }, 1000);
+            }}
             onMouseEnter={() => {
-              setColor7("text-stone-400")
+              setColor7("text-stone-400");
               if (Other) {
                 setOther(false);
               } else {
