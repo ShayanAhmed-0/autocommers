@@ -72,23 +72,23 @@ const Navbar = () => {
     "Wheel-Centre-Caps",
     "Wheel-Covers",
     "Wheel-Lugnuts",
-    "Wheel-Tyres / Tires",
+    "Wheel-Tyres&Tires",
     "Wheels-Snow-Chains",
     "Bundle-Offers&Flash-Sale",
     "Bundle-Offers",
-    "Services ",
+    "Services",
     "Used-Car-Accessories",
   ];
   let LedAndLightening = [
-    "Backlights/Backlamps",
+    "Backlights&Backlamps",
     "Bumper-Fog-Lamps",
     "Day-Time-Running-Lights",
-    "Dome/Roof-SMD&LED",
+    "Dome&Roof-SMD&LED",
     "EL-Glow-Wires",
     "Flasher-Lights",
     "Flexible-DRL-Switchbacks",
     "Fog-Lamp-DRL-Covers",
-    "Headlights/Headlamps",
+    "Headlights&Headlamps",
     "HID&LED-Bulbs",
     "InteriorLEDLights",
     "LED&Rubber-Sill-Plates",
@@ -179,11 +179,11 @@ const Navbar = () => {
     "SprayPaints",
     "Steam-Cleaners",
     "Trims-Restorer&Cleaner",
-    "Wheel&Tyre ",
+    "Wheel&Tyre",
     "Windshield&GlassWash",
   ];
   let MOBILE = [
-    "Charging Cables",
+    "Charging-Cables",
     "MobileChargers|ChargingSockets",
     "MobileHolders",
     "PowerBanks",
@@ -221,7 +221,7 @@ const Navbar = () => {
           setOther(false);
         }, 5000);
       }}
-      className="flex items-center justify-between p-4 mx-8 my-6 rounded-full shadow-lg shadow-black navc"
+      className="flex items-center justify-between p-2 mx-8 my-6 rounded-full shadow-lg shadow-black navc"
     >
       <Link href={"/"}>
         <Image
@@ -267,7 +267,7 @@ const Navbar = () => {
                   {LedAndLightening.map((items) => {
                     return (
                       <Link key={items} href={`/Category/${items}`}>
-                        <li className="p-2 list-disc rounded-xl hover:text-stone-950 hover:bg-white">
+                        <li className="p-2 text-white list-disc rounded-xl hover:text-stone-950 hover:bg-white">
                           {items}
                         </li>
                       </Link>
@@ -311,7 +311,9 @@ const Navbar = () => {
                   {ExteriorParts.map((items) => {
                     return (
                       <Link key={items} href={`/Category/${items}`}>
-                        <li className="list-disc">{items}</li>
+                        <li className="p-2 text-white list-disc rounded-xl hover:text-stone-950 hover:bg-white">
+                          {items}
+                        </li>
                       </Link>
                     );
                   })}
@@ -353,7 +355,9 @@ const Navbar = () => {
                   {INTERIORPARTS.map((items) => {
                     return (
                       <Link key={items} href={`/Category/${items}`}>
-                        <li className="list-disc">{items}</li>
+                        <li className="p-2 text-white list-disc rounded-xl hover:text-stone-950 hover:bg-white">
+                          {items}
+                        </li>
                       </Link>
                     );
                   })}
@@ -395,7 +399,9 @@ const Navbar = () => {
                   {CARCARE.map((items) => {
                     return (
                       <Link key={items} href={`/Category/${items}`}>
-                        <li className="list-disc">{items}</li>
+                        <li className="p-2 text-white list-disc rounded-xl hover:text-stone-950 hover:bg-white">
+                          {items}
+                        </li>
                       </Link>
                     );
                   })}
@@ -445,7 +451,9 @@ const Navbar = () => {
                   {MOBILE.map((items) => {
                     return (
                       <Link key={items} href={`/Category/${items}`}>
-                        <li className="list-disc">{items}</li>
+                        <li className="p-2 text-white list-disc rounded-xl hover:text-stone-950 hover:bg-white">
+                          {items}
+                        </li>
                       </Link>
                     );
                   })}
@@ -487,7 +495,9 @@ const Navbar = () => {
                   {UTILITIES.map((items) => {
                     return (
                       <Link key={items} href={`/Category/${items}`}>
-                        <li className="list-disc">{items}</li>
+                        <li className="p-2 text-white list-disc rounded-xl hover:text-stone-950 hover:bg-white">
+                          {items}
+                        </li>
                       </Link>
                     );
                   })}
@@ -529,7 +539,9 @@ const Navbar = () => {
                   {others.map((items) => {
                     return (
                       <Link key={items} href={`/Category/${items}`}>
-                        <li className="list-disc">{items}</li>
+                        <li className="p-2 text-white list-disc rounded-xl hover:text-stone-950 hover:bg-white">
+                          {items}
+                        </li>
                       </Link>
                     );
                   })}

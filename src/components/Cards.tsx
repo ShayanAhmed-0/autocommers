@@ -7,13 +7,13 @@ import { urlForImage } from '../../sanity/lib/image'
 const Cards:FC<{item:any}> = ({item}) => {
   return (
     <div className="flex">
-      <div className="p-4 duration-500 bg-slate-900 rounded-xl hover:scale-110">
+      <div className="p-4 duration-500 bg-zinc-900 rounded-xl hover:scale-110">
       {item.image?.asset && (
           <Image
           className=""
           src={urlForImage(item.image).url()}
           alt="Card Image"
-          width={350}
+          width={250}
           height={485}
           />
           )}
@@ -45,7 +45,7 @@ const Cards:FC<{item:any}> = ({item}) => {
             </h1>
           </div>
           <div className="flex items-center justify-center gap-4 pt-4">
-            <button className="p-2 pl-6 pr-6 text-white bg-pink-400 rounded-xl">
+            <button className="p-2 pl-6 pr-6 text-white bg-black rounded-xl hover:bg-white/70 hover:text-black hover:duration-1000 hover:font-extrabold">
               Button
             </button>
       

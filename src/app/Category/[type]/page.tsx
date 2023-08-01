@@ -27,10 +27,15 @@ const page = async ({ params }: { params: { type: string } }) => {
   const data: IProduct[] = await getProductData();
 
   return (
-    <div>
-      <h1>This is: {params.type} Category</h1>
-      <div className='-mt-8'>
-      <Hero/>
+    <div className=''>
+      <h1 className='flex justify-center pt-8 text-2xl font-bold text-black'>{params.type}</h1>
+      <div className='flex justify-center w-full max-w-screen-lg p-10 mx-auto border-l-4 border-r-4 border-black/50'>
+      <input
+                className=" items-center w-full lg:w-[100vh] text-xl h-10 shadow-lg shadow-black text-white navc pl-4"
+                type="text"
+                placeholder="Search"
+              />
+      {/* <Hero/> */}
       </div>
       <div className='flex justify-center'>
         <div className='relative justify-center'>

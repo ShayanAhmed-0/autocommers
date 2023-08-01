@@ -6,7 +6,7 @@ import Hero from '@/view/Hero'
 export default function Home() {
   return (
    <>
-   <div className='pt-2 cc'>
+   <div className='pt-2'>
 
 
   <Hero/>
