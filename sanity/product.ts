@@ -8,22 +8,22 @@ export const product = {
   fields: [
     {
       name: "id",
-      titel: "id",
+      title: "id",
       type: "number",
     },
     {
       name: "title",
-      titel: "Title",
+      title: "Title",
       type: "string",
     },
     {
       name: "type",
-      titel: "Type",
+      title: "Type",
       type: "string",
     },
     {
       name: "description",
-      titel: "product Description",
+      title: "product Description",
       type: "string",
     },
     {
@@ -43,15 +43,15 @@ export const product = {
     },
     {
       name: "image",
-      titel: "product Image",
+      title: "product Image",
       type: "image",
     },
-    {
-      title: 'image',
-      name: 'productImage',
-      type: 'array',
-      of: [{type: 'image'}]
-    },
+    // {
+    //   title: 'image',
+    //   name: 'productImage',
+    //   type: 'array',
+    //   of: [{type: 'image'}]
+    // },
     {
       title: 'carepoints',
       name: 'productcare',

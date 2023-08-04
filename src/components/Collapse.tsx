@@ -9,11 +9,11 @@ import Link from 'next/link'
 const Collapse = ({elements,heading}:{elements:string[],heading:string}) => {
   return (
     <div>
-                <li >
-          <Collapsible>
-  <CollapsibleTrigger>{heading}</CollapsibleTrigger>
+                <li>
+          <Collapsible >
+  <CollapsibleTrigger >{heading}</CollapsibleTrigger>
   <CollapsibleContent>
-  <ul className="pl-4 text-white">
+  <ul className="pt-2 pl-8 text-white">
     {
       elements.map((items:any)=>(
         <Link key={items} href={`/Category/${items}`}>

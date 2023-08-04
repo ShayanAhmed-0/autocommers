@@ -572,7 +572,7 @@ const Navbar = () => {
                 </h1>
               </div>
             </div>
-            <ul className="text-lg font-semibold">
+            <ul className="text-lg font-semibold ">
               <li>
                 <Collapse
                   heading={"LedAndLightening"}
