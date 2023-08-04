@@ -6,6 +6,8 @@ import { Image as IImage } from "sanity";
 import { urlForImage } from '../../../../sanity/lib/image';
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import Counter from '@/components/Counter';
+import Size from '@/components/Size';
+import Col3 from '@/components/Col3';
 // import Hero from '@/view/Hero';
 
 // Define the type for the product data
@@ -16,6 +18,7 @@ interface IProduct {
       _type: 'reference';
     };
   };
+  _id:string
   price: number;
   title: string;
   type: string;
@@ -25,6 +28,8 @@ interface IProduct {
   };
   productcare: string[];
   description: string;
+  Sizes:string[];
+  Colors:string[];
 }
 
 const page = async ({ params }: { params: { Name: string } }) => {
@@ -32,10 +37,13 @@ const page = async ({ params }: { params: { Name: string } }) => {
     const res = await client.fetch(
       `*[_type=="product" && title=="${params.Name}"]{   
         image,
+        _id,
         type,
+        Colors,
         description,
         id,
         price,
+        Sizes,
         title,           
       }`
     );
@@ -44,10 +52,10 @@ const page = async ({ params }: { params: { Name: string } }) => {
 
   const data: IProduct[] = await getProductData();
   const res = data[0]
-  console.log(res)
   const imageUrl = urlForImage(res.image.asset).url();
   return (
     <div className=''>
+      
 <div className='mt-10 font-bold text-black border-t-2 border-black/40'>
 <h1 className='flex justify-center pt-8 pb-8 text-3xl tracking-widest'>Product Details</h1>
 
@@ -63,29 +71,9 @@ const page = async ({ params }: { params: { Name: string } }) => {
           <Image className='' src={imageUrl} alt="Pimg" width={300} height={200} />
         </div>
 
-        <div className='flex items-center justify-center mt-16'>
-          <div className='flex-1 '>
-            <div className='space-y-4'>
-              <div className='flex items-center justify-between '>
-                <h1  className='text-xl'>Price: ${res.price}</h1>
-                <h1 className='flex gap-2 text-black/50'>
-                  <h1 className=''>
-                    Was:
-                    </h1>
-                    <del>$123</del></h1>
-              </div>
-              
-              <div className='flex gap-4 pt-10 item-center'>
-                <h1 className='text-xl'>
-                  Quantity:
-                </h1>
-                <Counter />
-              </div>
-              
-            </div>
-          </div>
+        <div>
+          <Col3 price={res.price} id={res._id} Sizes={res.Sizes} Colors={res.Colors}/>
         </div>
-
         {/* {
           data.map((item:any)=>(
             <div key={item.id}>

@@ -57,6 +57,19 @@ export const product = {
       name: 'productcare',
       type: 'array',
       of: [{type: 'string'}]
+    },
+    {
+      title: 'Sizes',
+      name: 'Sizes',
+      type: 'array',
+      of: [{type: 'string'}]
+    },
+    {
+      title: 'Colors',
+      name: 'Colors',
+      type: 'array',
+      of: [{type: 'string'}]
     }
+
   ],
 };
