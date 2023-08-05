@@ -71,7 +71,7 @@ const page = async ({ params }: { params: { Name: string } }) => {
           <Image className='' src={imageUrl} alt="Pimg" width={300} height={200} />
         </div>
 
-        <div>
+        <div className='flex items-center'>
           <Col3 price={res.price} id={res._id} Sizes={res.Sizes} Colors={res.Colors}/>
         </div>
         {/* {

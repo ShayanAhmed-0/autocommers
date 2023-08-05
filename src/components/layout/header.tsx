@@ -567,9 +567,11 @@ const Navbar = () => {
             </SheetHeader>
             <div className="mt-6 mb-2">
               <div className="flex items-center pl-4 pr-4 rounded-full">
+                <Link href='/cart'>
                 <h1 className="flex items-center justify-center text-black bg-gray-300 rounded-full w-9 h-9">
                   <BiCart size={22} />
                 </h1>
+                </Link>
               </div>
             </div>
             <ul className="text-lg font-semibold ">
@@ -619,9 +621,11 @@ const Navbar = () => {
 
       <div className="hidden mr-0 lg:flex">
         <div className="flex items-center p-2 pl-4 pr-4 rounded-full gap-x-4">
+          <Link href='/cart'>
           <h1 className="flex items-center justify-center text-black bg-gray-300 rounded-full w-9 h-9">
             <BiCart size={22} />
           </h1>
+          </Link>
         </div>
       </div>
 
